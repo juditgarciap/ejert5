@@ -22,4 +22,23 @@ except OSError:
     contador = 0
     print('Archivo creado!!')
     
-    
+    # leer el argumento ingresado por medio del script
+try:
+    comando = sys.argv[1]    
+    # incrementar el contador que hay en el txt en caso de ser 'inc'
+    if comando == 'inc':
+	    # incrementar en uno
+	    contador = contador + 1
+	print('Incrementando el número de visitas debido al argumento inc')
+	print('Nuevo valor: {}'.format(contador))
+	    
+    elif comando == 'dec':
+	    # decrementar en uno
+	print('Decrementando el número de visitas debido al argumento dec')
+	contador = contador - 1
+	    print('Nuevo valor: {}'.format(contador))
+	    
+    else:
+	    # caso para cuando se envia otra cosa diferente a inc y dec
+	    print('Número de visitas leído del archivo contador: {}'.format(contador))
+	    
