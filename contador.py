@@ -36,9 +36,25 @@ try:
 	    # decrementar en uno
 	print('Decrementando el número de visitas debido al argumento dec')
 	contador = contador - 1
-	    print('Nuevo valor: {}'.format(contador))
+	print('Nuevo valor: {}'.format(contador))
 	    
     else:
 	    # caso para cuando se envia otra cosa diferente a inc y dec
-	    print('Número de visitas leído del archivo contador: {}'.format(contador))
+	print('Número de visitas leído del archivo contador: {}'.format(contador))
 	    
+    print('Almacenando nuevo valor')
+    archivo.write(str(contador)) 
+    # tambien almacena el valor que previamente fue leído en el caso que
+    # se ingrese otro argumento diferente a inc o dec
+
+except:
+    # caso para cuando no se envia argumento
+    print('Número de visitas leído del archivo contador: {}'.format(contador))
+    
+    # cuando se crea un archivo nuevo y no se aplica ninguna acción entonces 
+    # alamcenar el 0
+    if contador == 0:
+        archivo.write(str(contador))
+
+# cerrar el archivo 
+archivo.close()
